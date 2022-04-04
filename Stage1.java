@@ -2,7 +2,7 @@ import java.io.*;//JavaScript source code
 import java.net.*;
 import java.nio.charset.StandardCharsets;
 
-public class client {
+public class Stage1 {
     public static void main(String[] args) //Declaring Variables
 	{ 
         try {
@@ -53,7 +53,7 @@ public class client {
         try
 		{
             DataInputStream dis = new DataInputStream(s.getInputStream());
-            Byte[] ByteArray = new Byte[dis.available()];
+            byte[] ByteArray = new Byte[dis.available()];
             ByteArray = new Byte[0]; //Prepares Array for message
             while (ByteArray.length == 0)
 			{
