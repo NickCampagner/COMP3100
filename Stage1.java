@@ -53,11 +53,11 @@ public class Stage1 {
         try
 		{
             DataInputStream dis = new DataInputStream(s.getInputStream());
-            byte[] ByteArray = new Byte[dis.available()];
-            ByteArray = new Byte[0]; //Prepares Array for message
+            byte[] ByteArray = new byte[dis.available()];
+            ByteArray = new byte[0]; //Prepares Array for message
             while (ByteArray.length == 0)
 			{
-                ByteArray = new Byte[dis.available()];
+                ByteArray = new byte[dis.available()];
                 dis.read(ByteArray);
                 CurrentMsg = new String(ByteArray, StandardCharsets.UTF_8); //Creates String
             }
@@ -74,7 +74,7 @@ public class Stage1 {
         try 
 		{
 				DataOutputStream Dout = new DataOutputStream(s.getOutputStream());
-			    Byte[] ByteArray = CurrentMsg.getBytes(); //Converts string for sending to server
+			    byte[] ByteArray = CurrentMsg.getBytes(); //Converts string for sending to server
 			    Dout.write(ByteArray);
                 Dout.flush();
         } 
